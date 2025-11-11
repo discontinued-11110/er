@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.4">
+  <link rel="icon" href="">
+  <title>(+__+)!!!</title>
+  
+  <link rel="shortcut icon" href="https://imgur.com/43kCtaW.gif" type="image/x-icon">
+  <link rel="icon" href="https://imgur.com/43kCtaW.gif" type="image/x-icon">
+  
+  <link rel="stylesheet" type="text/css" href="fun_css/main.css">
+  <link rel="stylesheet" type="text/css" href="fun_css/crt.css">
+  
+  <meta property="og:title" content="👁️">
+  <meta property="og:url" content="https://lainlover.fun">
+  <meta property="og:image" content="https://media.tenor.com/V5ElXJIMqmsAAAAi/lain-iwakura-iwakura.gif">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="A Perfect And Inmortal Machine">
+  <meta content="#000" name="theme-color">
+  
+  <style>
+    * {cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur272.cur), auto !important;}
+    body { background-image: url("pum.gif"); }
+    .hidden {display: none;}
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    function playSound(id) {
+      $(id)[0].play();
+    }
+    let eyeState = 0;
+    let c, ctx, x, y;
+    $(document).ready(function() {
+      setInterval(eyeBallHand, 100);
+      c = document.getElementById("eye");
+      ctx = c.getContext("2d");
+    });
+    
+    $(document).mousemove(function(event) {
+      x = (event.pageX - 128 - $('#eye').offset().left);
+      y = (event.pageY - 24 - $('#eye').offset().top);
+    });
+    
+    function eyeBallHand() {
+      let $form = $(':focus');
+      if ($form.length) {
+        if (eyeState < 3) eyeState++;
+      } else {
+        if (eyeState > 0) eyeState--;
+      }
+      //console.log('x: ' + x + '| y: ' + y);
+      let img = document.getElementById('eye' + eyeState);
+      let imgb = document.getElementById('eyeb');
+      ctx.clearRect(0, 0, c.width, c.height);
+      if (eyeState > 0) {
+        let _x = x/15;
+        let _y = y/40;
+        ctx.drawImage(imgb, _x, _y);
+      }
+      ctx.drawImage(img, 0, 0);
+      //$('#eye').attr('src', `images/eyes/eye${eyeState}.png`);
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Elementos del efecto CRT -->
+  <div id="crt-wrapper"></div>
+  <div id="crt-overlay" class="crt-overlay"></div>
+  <div id="crt-rgb-shift" class="crt-rgb-shift"></div>
+  <div class="curved-effect"></div>
+  <div class="horizontal-lines"></div>
+  <div class="motion-blur"></div>
+  
+  <br>
+  <div class="block ghosting-effect">
+    <br>
+    <h1 class="glowtext aberration-text">
+      Who are you?
+    </h1>
+    <br>
+    <h4 class="aberration-text">
+      あなたの名前で私たちは真実を知っています
+    </h4>
+    <br>
+    <hr>
+    <br>
+    
+    <canvas id="eye" width="256" height="48"></canvas>
+    <img src="https://imgur.com/YqLCdn7.png" id="eye0" class="hidden">
+    <img src="https://imgur.com/2gwolHW.png" id="eye1" class="hidden">
+    <img src="https://imgur.com/SfNJ3KZ.png" id="eye2" class="hidden">
+    <img src="https://imgur.com/1V3SD2j.png" id="eye3" class="hidden">
+    <img src="https://imgur.com/nlXZipy.png" id="eyeb" class="hidden">
+    
+    <p>
+      <label>Password<br></label>
+      <input id="logiId" type="text" value="•••••••••">
+    </p>
+        
+    <a href="home.html" class="button" title="ログイン">Log In</a>
+  
+    <br><br> 
+    <hr>
+    
+    <br>
+    
+    <br><br>
+    
+  <!--</div>
+  <script type="text/javascript">
+    var soundPaths = [
+      "assets/blackrainbow.mp3", 
+      "ログイン songs/breeze.mp3", 
+      "ログイン songs/clockworklittlehappiness.mp3", 
+      "ログイン songs/maternalheart.mp3", 
+      "ログイン songs/PleaseLoveMeOnceMore.mp3", 
+      "ログイン songs/SicknessUntoFoolishDeath.mp3"
+    ];
+    var sounds = [];
+    var i = -1;
+    
+    // Preload sounds with error handling
+    soundPaths.forEach(function(path) {
+      var audio = new Audio();
+      audio.addEventListener('error', function() {
+        console.log('Error loading audio file: ' + path);
+      });
+      audio.src = path;
+      sounds.push(audio);
+    });
+    
+    // Start playing sounds if any are loaded
+    if (sounds.length > 0) {
+      playSnd();
+    }
+
+    function playSnd() {
+      i++;
+      if (i >= sounds.length) return;
+      sounds[i].addEventListener('ended', playSnd);
+      sounds[i].addEventListener('error', function() {
+        // Skip to next song if there's an error
+        playSnd();
+      });
+      
+      var playPromise = sounds[i].play();
+      
+      // Handle play promise rejection (browser policy may prevent autoplay)
+      if (playPromise !== undefined) {
+        playPromise.catch(function(error) {
+          console.log('Autoplay prevented: ' + error);
+          // Continue to next song
+          playSnd();
+        });
+      }
+    }
+
+    function play() {
+      var audio = document.getElementById("audio");
+      if (audio) {
+        audio.play().catch(function(error) {
+          console.log('Play error: ' + error);
+        });
+      }
+    }
+  </script>-->
+</body>
+</html>

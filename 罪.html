@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>罪</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://imgur.com/43kCtaW.gif" type="image/x-icon">
+  <link rel="icon" href="https://imgur.com/43kCtaW.gif" type="image/x-icon">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="fun_css/lol.css" type="text/css" media="all">
+  <link rel="stylesheet" href="fun_css/crt.css" type="text/css">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="(+__+)" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="罪に罪を重ねてだけだよ。" />
+  <meta name="theme-color" content="#000000">
+
+  <!-- Cursor personalizado -->
+  <style>
+    * {
+      cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur272.cur), auto !important;
+    }
+  </style>
+</head>
+
+<body class="flexCol span noselect" style="background: black;">
+
+  <!-- Efecto CRT -->
+  <div id="crt-wrapper"></div>
+  <div id="crt-overlay" class="crt-overlay"></div>
+  <div id="crt-rgb-shift" class="crt-rgb-shift"></div>
+  <div class="curved-effect"></div>
+  <div class="horizontal-lines"></div>
+  <div class="motion-blur"></div>
+
+  <!-- Contenido principal -->
+  <div id="罪" class="app">
+    <p class="bar invert">
+      <a href="電脳網.html"><span class="blink">█</span>:Us</a>
+      <span style="color: red;">罪</span>
+    </p>
+
+    <div class="container" style="background: red; background-image: linear-gradient(red, black); color: black; font-weight: bold;">
+      <a href="https://eren.dog">
+        <p class="hl">&lt; Return</p>
+      </a>
+
+      <div class="flexCol" style="margin: 1em;">
+        <p class="blink">! ! ! ! !</p>
+        <br>
+        <p>罪に罪を重ねてけだよ。</p>
+        <br>
+        <a href="怠.html"><p class="hl">継続する</p></a>
+      </div>
+    </div>
+
+    <marquee class="bar invert" loop="infinite" style="font-size: 10pt;">
+      make sure you have the permission to play audio active :).
+    </marquee>
+  </div>
+
+  <!-- Reproducción de sonido -->
+  <script type="text/javascript">
+    var sounds = [new Audio("call1.mp3")];
+    var i = -1;
+    playSnd();
+
+    function playSnd() {
+      i++;
+      if (i >= sounds.length) return;
+      sounds[i].addEventListener('ended', playSnd);
+      sounds[i].play();
+    }
+  </script>
+
+</body>
+</html>
