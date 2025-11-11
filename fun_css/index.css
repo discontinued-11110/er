@@ -1,0 +1,233 @@
+/*Global Formatting*/
+
+    html, body  {min-height: 100%; margin: 0;} /*This stretches the usuable area to the edges of the screen.*/
+    html                {background: black; color: white;}
+    body                {
+    font-family: 'Zpix', "Courier New", Courier, monospace; 
+    font-size: 1.5em;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+    img                 {image-rendering: crisp-edges; box-sizing: border-box; border: 3px white solid;}
+    p                   {margin: 3px; padding: 3px;}
+    a                   {color: inherit; text-decoration: inherit;}
+
+
+    @font-face {  font-family: 'Zpix'; 
+                  src: url('../Font/Zpix.woff2') format('woff2'), 
+                       url('../Font/Zpix.woff') format('woff'); 
+                  font-weight: normal; 
+                  font-style: normal; 
+                  font-display: fallback; }
+
+/* Graphical Formatting */
+
+    .container  {width: 75%; height: 75%; box-sizing: border-box; border-left: 3px black solid; border-right: 3px black solid; background: white; overflow-y: auto; margin: 0;}
+    .bar                {width: 75%; box-sizing: border-box; border: 3px black solid; padding: 0; margin: 0;}
+    .invert             {background: black; color: white; font-weight: bold;}
+    .unvert             {background: white; color: black;}
+    .hl:hover   {background: black; color: white; font-weight: bold;}
+    .no                 {text-decoration: line-through; cursor: no-drop;}
+
+/* DIV Formatting */
+
+    .modal      {position: fixed; z-index: 6; opacity: 0; pointer-events: none;}
+        .modal:target   {opacity: 1; filter: opacity(1); pointer-events: auto;}
+
+    .noselect {
+      -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+    }
+
+    .flexCol    {display: flex; justify-content: center; flex-flow: column nowrap; align-items: center;}
+    .flexRow    {display: flex; justify-content: center; flex-flow: row wrap; align-items: center;}
+    .flexRowNo  {display: flex; justify-content: center; flex-flow: row nowrap; align-items: center;}
+
+    .span{position: fixed; width: 100%; height: 100%; z-index: 1;}
+
+    .app                {position: fixed; width: 100%; height: 100%; z-index: 1; display: flex; justify-content: center; flex-flow: column nowrap; align-items: center;}
+    
+/* Ajustes responsivos generales */
+    @media (max-width: 768px) {
+        body {
+            font-size: 1.2em;
+        }
+        
+        .container {
+            width: 90%;
+        }
+        
+        .bar {
+            width: 90%;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        body {
+            font-size: 1em;
+        }
+        
+        #main {
+            padding: 10px;
+        }
+    }
+
+/* Botón de SoundCloud */
+    .soundcloud-toggle-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .soundcloud-toggle-btn {
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .soundcloud-toggle-btn:hover {
+        background-color: #333;
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    }
+
+    .soundcloud-toggle-btn i {
+        font-size: 20px;
+    }
+
+    /* Responsive para móviles */
+    @media (max-width: 768px) {
+        .soundcloud-toggle-container {
+            top: 10px;
+            right: 10px;
+        }
+        
+        .soundcloud-toggle-btn {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .soundcloud-toggle-btn i {
+            font-size: 16px;
+        }
+    }
+
+/* Panel deslizante de SoundCloud */
+    .soundcloud-panel {
+        position: fixed;
+        top: 0;
+        right: -350px;
+        width: 350px;
+        height: 100%;
+        background-color: black;
+        border-left: 3px solid white;
+        z-index: 2000;
+        transition: right 0.4s ease;
+        color: white;
+        overflow-y: auto;
+    }
+
+    .soundcloud-panel.open {
+        right: 0;
+    }
+
+    .soundcloud-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #333;
+    }
+
+    .soundcloud-header h3 {
+        margin: 0;
+        font-weight: normal;
+    }
+
+    .close-soundcloud {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .close-soundcloud:hover {
+        transform: scale(1.2);
+        color: #f44336;
+    }
+
+    .soundcloud-content {
+        padding: 15px;
+    }
+
+    /* Estilos responsivos para el panel */
+    @media (max-width: 768px) {
+        .soundcloud-panel {
+            width: 300px;
+            right: -300px;
+        }
+        
+        .soundcloud-header {
+            padding: 10px;
+        }
+        
+        .soundcloud-content {
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .soundcloud-panel {
+            width: 90%;
+            right: -90%;
+        }
+    }
+
+/* Animations */
+
+    @keyframes blinker {50% {opacity: 0;}}
+    .blink {animation: blinker 1s step-start infinite;}
+
+    @keyframes highlightBlink {50% {background-color: black; color: rgba(153,153,102,1); font-weight: normal;}}
+    .highlightBlink {animation: highlightBlink 1s step-start infinite;}
+
+    @keyframes load {50% {opacity: 0;}}
+        .load0n5s {animation: load 0.5s step-start forwards;}
+    .load1s {animation: load 1s step-start forwards;}
+        .load1n5s {animation: load 1.5s step-start forwards;}
+    .load2s {animation: load 2s step-start forwards;}
+        .load2n5s {animation: load 2.5s step-start forwards;}
+    .load3s {animation: load 3s step-start forwards;}
+        .load3n5s {animation: load 3.5s step-start forwards;}
+    .load4s {animation: load 4s step-start forwards;}
+        .load4n5s {animation: load 4.5s step-start forwards;}
+    .load5s {animation: load 5s step-start forwards;}
+        .load5n5s {animation: load 5.5s step-start forwards;}
+    .load6s {animation: load 6s step-start forwards;}
+    .load7s {animation: load 7s step-start forwards;}
+    .load8s {animation: load 8s step-start forwards;}
+    .load9s {animation: load 9s step-start forwards;}
+
+
+
+
