@@ -75,10 +75,10 @@
             <br>
         </div>
         <div class="load5n5s">
-            <!-- <p class="invert">Idk:</p>-->
-            <a href="神.html"><p class="hl">救い主として受け入れ</p></a>
-            <br>
-        </div>
+          <p class="hl" id="videoTrigger">救い主として受け入れ</p>
+    </a>
+    <br>
+</div>
         <div class="load6s">
             <b><p class="invert">Random:</p></b>
             <a href="罪.html"><p class="btn" style="color: red;">罪</p></a>
@@ -112,7 +112,7 @@
 
     <!-- Scripts -->
     <script type="text/javascript">
-        // Función para cambiar lista de SoundCloud
+       
         function cambiarLista() {
             const url = document.getElementById('soundcloud-url').value;
             if(url) {
@@ -121,22 +121,22 @@
             }
         }
 
-        // Script para controlar el panel de SoundCloud
+        
         var soundcloudPanel = document.getElementById('soundcloud-panel');
         var soundcloudToggleBtn = document.getElementById('soundcloud-toggle-btn');
         var closeSoundcloudBtn = document.getElementById('close-soundcloud');
         
-        // Función para mostrar el panel de SoundCloud
+        
         soundcloudToggleBtn.addEventListener('click', function() {
             soundcloudPanel.classList.toggle('open');
         });
         
-        // Función para cerrar el panel de SoundCloud
+        
         closeSoundcloudBtn.addEventListener('click', function() {
             soundcloudPanel.classList.remove('open');
         });
 
-        // Array de frases aleatorias
+        
         const frases = [
             "Squirrels secretly rule the world from the park trees.",
             "My socks have secret conversations at night.",
@@ -168,6 +168,58 @@
             spanTextoCambiante.textContent = obtenerFraseAleatoria();
         });
     </script>
-</body>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const trigger = document.getElementById("videoTrigger");
 
+  trigger.addEventListener("click", async () => {
+    
+    if (document.getElementById("fullscreenVideo")) return;
+
+    
+    const video = document.createElement("video");
+    video.id = "fullscreenVideo";
+    video.src = "video.mp4"; 
+    video.autoplay = true;
+    video.controls = false;
+    video.loop = true; 
+    video.style.position = "fixed";
+    video.style.top = "0";
+    video.style.left = "0";
+    video.style.width = "100vw";
+    video.style.height = "100vh";
+    video.style.objectFit = "cover";
+    video.style.zIndex = "99999";
+    video.style.backgroundColor = "black";
+
+    document.body.appendChild(video);
+
+   
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "F11") {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
+    
+    window.addEventListener("contextmenu", e => e.preventDefault());
+
+    
+    try {
+      await video.requestFullscreen();
+    } catch (err) {
+      console.log(":(", err);
+    }
+
+    
+    try {
+      await video.play();
+    } catch (err) {
+      console.log("x(", err);
+    }
+  });
+});
+</script>
+</body>
 </html>
